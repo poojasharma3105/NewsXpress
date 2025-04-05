@@ -8,7 +8,7 @@ const NewsBoard = ({ category }) => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const url = `http://api.mediastack.com/v1/news?access_key=${import.meta.env.VITE_NEWS_API_KEY}&keywords=${category}&languages=en&sort=published_desc`;
+                const url = `https://api.mediastack.com/v1/news?access_key=${import.meta.env.VITE_NEWS_API_KEY}&keywords=${category}&languages=en&sort=published_desc`;
 
                 const res = await fetch(url);
                 const data = await res.json();
