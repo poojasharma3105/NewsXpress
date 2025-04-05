@@ -11,8 +11,7 @@ const NewsBoard = ({ category }) => {
                 const sevenDaysAgo = new Date(today);
                 sevenDaysAgo.setDate(today.getDate() - 7);
                 const fromDate = sevenDaysAgo.toISOString().split('T')[0];
-                const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-                const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${category}&from=${fromDate}&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;                
+                const url = `https://newsapi.org/v2/everything?q=${category}&from=${fromDate}&sortBy=publishedAt&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
 
                 const res = await fetch(url);
                 const data = await res.json();
